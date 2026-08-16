@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabad Gas Expert - LPG Gas Services</title>
+    <meta name="description" content="Hyderabad Gas Expert - Reliable LPG gas cylinder booking, delivery, gas stove repair and installation services in Hyderabad.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1d4ed8;
+            --primary-dark: #1e40af;
+            --saffron: #f97316;
+            --saffron-dark: #ea580c;
+            --dark: #0f172a;
+            --dark-2: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top bar */
+        .topbar {
+            background: var(--dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .topbar a:hover {
+            color: var(--saffron);
+        }
+
+        .topbar i {
+            color: var(--saffron);
+            margin-right: 6px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--saffron) 100%);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .logo h1 {
+            font-size: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .logo span {
+            font-size: 13px;
+            color: var(--gray);
+            display: block;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--saffron);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: background 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+            color: #fff !important;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--dark);
+            background: none;
+            border: none;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+            color: #fff;
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(249,115,22,0.25) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(249,115,22,0.15);
+            color: var(--saffron);
+            border: 1px solid rgba(249,115,22,0.4);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 span {
+            color: var(--saffron);
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 17px;
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--saffron);
+            color: var(--saffron);
+            transform: translateY(-2px);
+        }
+
+        .btn-green {
+            background: #22c55e;
+            color: #fff;
+        }
+
+        .btn-green:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .stat h3 {
+            font-size: 28px;
+            color: var(--saffron);
+        }
+
+        .stat p {
+            font-size: 13px;
+            color: #9ca3af;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .hero-card .icon {
+            font-size: 60px;
+            color: var(--saffron);
+            margin-bottom: 15px;
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card p {
+            font-size: 14px;
+            color: #d1d5db;
+            margin: 0 0 20px;
+        }
+
+        .hero-card .price {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--saffron);
+            margin-bottom: 15px;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-head h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-head h2 span {
+            color: var(--saffron);
+        }
+
+        .section-head p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px 22px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(249,115,22,0.15);
+            border-bottom-color: var(--saffron);
+        }
+
+        .feature-card .icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(249,115,22,0.1);
+            color: var(--saffron);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin: 0 auto 18px;
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 30px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: var(--saffron);
+            box-shadow: 0 10px 30px rgba(249,115,22,0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-card .icon {
+            font-size: 34px;
+            color: var(--saffron);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+
+        .service-card ul li {
+            font-size: 13px;
+            padding: 4px 0;
+            color: var(--dark);
+        }
+
+        .service-card ul li i {
+            color: var(--saffron);
+            margin-right: 8px;
+        }
+
+        .service-link {
+            color: var(--saffron);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .service-link:hover {
+            color: var(--saffron-dark);
+        }
+
+        /* Why us */
+        .why-us {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+            color: #fff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .why-item {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 28px;
+            border-radius: 14px;
+            transition: transform 0.3s;
+        }
+
+        .why-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .why-item .num {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--saffron);
+            margin-bottom: 10px;
+        }
+
+        .why-item h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: #d1d5db;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial .stars {
+            color: #fbbf24;
+            margin-bottom: 12px;
+        }
+
+        .testimonial p {
+            font-size: 14px;
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 18px;
+        }
+
+        .testimonial .user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .testimonial .name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .testimonial .role {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info h3 span {
+            color: var(--primary);
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .info-item .icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(249,115,22,0.1);
+            color: var(--saffron);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .info-item a {
+            color: var(--saffron);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-form {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: var(--light);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--saffron);
+            background: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-group input[type="tel"],
+        .form-group input[type="number"] {
+            appearance: textfield;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #9ca3af;
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-grid h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul a:hover {
+            color: var(--saffron);
+        }
+
+        .footer-contact p {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-contact a:hover {
+            color: var(--saffron);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            background: var(--dark-2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--saffron);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 18px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .footer-bottom a {
+            color: var(--saffron);
+            text-decoration: none;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            width: 56px;
+            height: 56px;
+            background: #22c55e;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(34,197,94,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .call-float {
+            position: fixed;
+            bottom: 22px;
+            right: 90px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(249,115,22,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .call-float:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(249,115,22,0.4); }
+            50% { box-shadow: 0 4px 25px rgba(249,115,22,0.7); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero p { margin: 0 auto 30px; }
+            .hero-buttons, .hero-stats { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                gap: 15px;
+                z-index: 200;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger { display: block; }
+
+            .topbar .container { justify-content: center; text-align: center; }
+            .topbar .right { display: none; }
+
+            .hero { padding: 60px 0; }
+            .hero h2 { font-size: 32px; }
+            .hero-stats { gap: 25px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .btn { padding: 12px 20px; font-size: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 { font-size: 17px; }
+            .logo span { font-size: 11px; }
+            .logo-icon { width: 40px; height: 40px; font-size: 18px; }
+            .hero h2 { font-size: 27px; }
+            .hero-buttons { flex-direction: column; align-items: stretch; }
+            .hero-buttons .btn { justify-content: center; }
+            .section-head h2 { font-size: 27px; }
+            .whatsapp-float, .call-float { width: 50px; height: 50px; font-size: 22px; }
+            .call-float { right: 80px; }
+            .contact-form { padding: 22px; }
+            .hero-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container">
+            <div>
+                <i class="fas fa-clock"></i> Open 24/7 - Free Home Delivery
+            </div>
+            <div class="right">
+                <i class="fas fa-phone"></i> Call us: <a href="tel:9004925123">9004925123</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon"><i class="fas fa-fire-flame-simple"></i></div>
+                    <h1>Hyderabad Gas Expert<span>LPG Gas Services</span></h1>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:9004925123" class="nav-cta"><i class="fas fa-phone"></i> 9004925123</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div>
+                <span class="hero-badge"><i class="fas fa-star"></i> Trusted LPG Gas Experts in Hyderabad</span>
+                <h2>Gas Cylinder Booking & <span>Home Delivery</span> Made Easy</h2>
+                <p>Book LPG gas cylinders online or by phone. Fast delivery, gas stove repair, pipeline installation & safety check services — all at your doorstep.</p>
+                <div class="hero-buttons">
+                    <a href="tel:9004925123" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+                    <a href="https://wa.me/919004925123" class="btn btn-green" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>10K+</h3>
+                        <p>Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Service</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Reliable</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="icon"><i class="fas fa-fire-flame-curved"></i></div>
+                <h3>Book Gas Cylinder</h3>
+                <p>14.2kg Domestic & Commercial cylinders available</p>
+                <div class="price">Get Delivery in 30 Mins</div>
+                <a href="tel:9004925123" class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fas fa-phone"></i> Book Now: 9004925123</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-head">
+                <h2>Why Choose <span>Hyderabad Gas Expert</span></h2>
+                <p>Your trusted partner for safe, reliable and affordable gas services in Hyderabad.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your gas cylinder delivered within 30 minutes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>100% Safe</h3>
+                    <p>Quality-checked cylinders and certified gas connections.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-tags"></i></div>
+                    <h3>Best Prices</h3>
+                    <p>Transparent government rates with no hidden charges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock booking & emergency support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-head">
+                <h2>Our <span>Services</span></h2>
+                <p>Complete LPG solutions for homes, restaurants, hotels and businesses.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-fire-flame-curved"></i></div>
+                    <h3>Gas Cylinder Booking</h3>
+                    <p>Domestic and commercial LPG cylinder booking at your doorstep.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 14.2 kg Domestic Cylinders</li>
+                        <li><i class="fas fa-check"></i> Commercial & Bulk Cylinders</li>
+                        <li><i class="fas fa-check"></i> New Connection Registration</li>
+                    </ul>
+                    <a href="tel:9004925123" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-wrench"></i></div>
+                    <h3>Stove & Appliance Repair</h3>
+                    <p>Expert repair for gas stoves, ovens, heaters and burners.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Stove Repair & Service</li>
+                        <li><i class="fas fa-check"></i> Burner Cleaning</li>
+                        <li><i class="fas fa-check"></i> Oven & Heater Repair</li>
+                    </ul>
+                    <a href="tel:9004925123" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-pipe-valve"></i></div>
+                    <h3>Pipeline Installation</h3>
+                    <p>Professional gas pipeline and regulator installation services.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Kitchen Pipeline Setup</li>
+                        <li><i class="fas fa-check"></i> Regulator Installation</li>
+                        <li><i class="fas fa-check"></i> Leakage Detection</li>
+                    </ul>
+                    <a href="tel:9004925123" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Safety Check & Inspection</h3>
+                    <p>Complete gas leakage check and safety inspection at home.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Leakage Testing</li>
+                        <li><i class="fas fa-check"></i> Regulator & Tube Check</li>
+                        <li><i class="fas fa-check"></i> Safety Compliance Report</li>
+                    </ul>
+                    <a href="tel:9004925123" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Supply</h3>
+                    <p>Regular gas supply for hotels, restaurants and industries.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Restaurant & Hotels Supply</li>
+                        <li><i class="fas fa-check"></i> Industrial Cylinders</li>
+                        <li><i class="fas fa-check"></i> Bulk Supply Contracts</li>
+                    </ul>
+                    <a href="tel:9004925123" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-file-circle-check"></i></div>
+                    <h3>New Connection & Transfers</h3>
+                    <p>Easy new LPG connection and transfer assistance.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> New Connection Setup</li>
+                        <li><i class="fas fa-check"></i> Connection Transfer</li>
+                        <li><i class="fas fa-check"></i> Document Assistance</li>
+                    </ul>
+                    <a href="tel:9004925123" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-head">
+                <h2 style="color:#fff;">Our <span>Commitment</span></h2>
+                <p style="color:#d1d5db;">We are committed to serving every customer with speed and safety.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="num">24/7</div>
+                    <h3>Always Available</h3>
+                    <p>Book gas any time — our team works round the clock for you.</p>
+                </div>
+                <div class="why-item">
+                    <div class="num">30 min</div>
+                    <h3>Super Fast Delivery</h3>
+                    <p>Get gas delivered to your doorstep within 30 minutes.</p>
+                </div>
+                <div class="why-item">
+                    <div class="num">100%</div>
+                    <h3>Quality Assured</h3>
+                    <p>Every cylinder is quality checked before delivery.</p>
+                </div>
+                <div class="why-item">
+                    <div class="num">10K+</div>
+                    <h3>Happy Customers</h3>
+                    <p>Trusted by thousands of families and businesses in Hyderabad.</p>
+                </div>
+                <div class="why-item">
+                    <div class="num">0</div>
+                    <h3>Hidden Charges</h3>
+                    <p>Transparent pricing at standard government rates.</p>
+                </div>
+                <div class="why-item">
+                    <div class="num">Safe</div>
+                    <h3>Certified Experts</h3>
+                    <p>Trained and certified technicians for all services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-head">
+                <h2>What Our <span>Customers Say</span></h2>
+                <p>Real reviews from happy customers across Hyderabad.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Very fast delivery. Booked in the morning and got the cylinder by afternoon. Highly recommended!"</p>
+                    <div class="user">
+                        <div class="avatar">R</div>
+                        <div>
+                            <div class="name">Ramesh Kumar</div>
+                            <div class="role">Kukatpally, Hyderabad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Their technician fixed my gas stove in 30 minutes. Very professional and reasonably priced service."</p>
+                    <div class="user">
+                        <div class="avatar">S</div>
+                        <div>
+                            <div class="name">Srinivas Reddy</div>
+                            <div class="role">Secunderabad, Hyderabad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"We get our restaurant's commercial cylinders from them. Always on time, never let us down. Great service!"</p>
+                    <div class="user">
+                        <div class="avatar">A</div>
+                        <div>
+                            <div class="name">Arif Ali</div>
+                            <div class="role">Mehdipatnam, Hyderabad</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-head">
+                <h2>Contact <span>Us</span></h2>
+                <p>Book your gas or service today. Call now for instant booking.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In <span>Touch</span></h3>
+                    <p>Have any questions or need help booking? Contact us anytime.</p>
+                    <div class="info-item">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:9004925123">9004925123</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/919004925123" target="_blank">Chat with us on WhatsApp</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Hyderabad, Telangana</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Open 24/7</p>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;">
+                        <a href="tel:9004925123" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/919004925123" class="btn btn-green" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Book Your Service</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service">
+                                <option value="Gas Cylinder Booking">Gas Cylinder Booking</option>
+                                <option value="Stove & Appliance Repair">Stove & Appliance Repair</option>
+                                <option value="Pipeline Installation">Pipeline Installation</option>
+                                <option value="Safety Check & Inspection">Safety Check & Inspection</option>
+                                <option value="Commercial Supply">Commercial Supply</option>
+                                <option value="New Connection & Transfers">New Connection & Transfers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address / Area</label>
+                            <input type="text" id="address" name="address" placeholder="Enter your address">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (optional)</label>
+                            <textarea id="message" name="message" placeholder="Any details about your requirement"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fab fa-whatsapp"></i> Submit Booking via WhatsApp</button>
+                    </form>
+                    <p id="formMsg" style="margin-top:15px; font-size:14px; color:#16a34a; font-weight:600; text-align:center; display:none;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"><i class="fas fa-fire-flame-simple"></i></div>
+                        <h1 style="color:#fff;">Hyderabad Gas Expert<span style="color:#9ca3af;">LPG Gas Services</span></h1>
+                    </a>
+                    <p>Your trusted LPG gas partner in Hyderabad. Fast delivery, quality service and 24/7 support.</p>
+                    <div class="social-links">
+                        <a href="tel:9004925123" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                        <a href="https://wa.me/919004925123" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-us">Why Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#services">Gas Cylinder Booking</a></li>
+                        <li><a href="#services">Stove Repair</a></li>
+                        <li><a href="#services">Pipeline Installation</a></li>
+                        <li><a href="#services">Commercial Supply</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone" style="color:var(--saffron); margin-right:8px;"></i><a href="tel:9004925123">9004925123</a></p>
+                    <p><i class="fab fa-whatsapp" style="color:var(--saffron); margin-right:8px;"></i><a href="https://wa.me/919004925123" target="_blank">WhatsApp Us</a></p>
+                    <p><i class="fas fa-location-dot" style="color:var(--saffron); margin-right:8px;"></i>Hyderabad, Telangana</p>
+                    <p><i class="fas fa-clock" style="color:var(--saffron); margin-right:8px;"></i>Open 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hyderabad Gas Expert. All rights reserved. | Phone: <a href="tel:9004925123">9004925123</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/919004925123" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:9004925123" class="call-float" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Active link highlight on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Booking form -> WhatsApp
+        const form = document.getElementById('bookingForm');
+        const formMsg = document.getElementById('formMsg');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const address = document.getElementById('address').value;
+            const message = document.getElementById('message').value;
+
+            const text = `Hello Hyderabad Gas Expert,%0A%0A*New Booking Request*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Address:* ${encodeURIComponent(address)}%0A*Message:* ${encodeURIComponent(message)}`;
+
+            window.open(`https://wa.me/919004925123?text=${text}`, '_blank');
+
+            formMsg.textContent = 'Booking request prepared! Sending via WhatsApp...';
+            formMsg.style.display = 'block';
+            form.reset();
+
+            setTimeout(() => {
+                formMsg.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
